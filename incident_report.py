@@ -30,10 +30,13 @@ print("Most recent North DC incident:", north_dc[-1])
 # Evidence: NameError - new_minutes was not assigned a value
 
 raw = input("Log a new North DC incident (minutes): ")
+
+# Fix: wrapped int(raw) in try/except ValueError so letters don't crash it.
+# Moved append and the total print inside try so they only run when int(raw) works.
 try:
     new_minutes = int(raw)
+    north_dc.append(new_minutes)
+    print("New North DC total:", sum(north_dc))
 except ValueError:
     print("Please enter a whole number, like 30.")
-north_dc.append(new_minutes)
-print("New North DC total:", sum(north_dc))
 
