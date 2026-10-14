@@ -30,7 +30,10 @@ print("Most recent North DC incident:", north_dc[-1])
 # Evidence: int() could not convert the string 'ten' to a number.
 
 raw = input("Log a new North DC incident (minutes): ")
-new_minutes = int(raw)
+try:
+    new_minutes = int(raw)
+except ValueError:
+    print("Please enter a whole number, like 30.")
 north_dc.append(new_minutes)
 print("New North DC total:", sum(north_dc))
 
