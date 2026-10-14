@@ -13,6 +13,13 @@ def calculate_total(minutes_list):
         total = total + m
     return total
 
+def count_major_incidents(minutes_list):
+    count = 0
+    for m in minutes_list:
+        if m >= 60:
+            count = count + 1
+    return count
+
 print("North DC total downtime:", calculate_total(north_dc))
 print("West DC total downtime:", calculate_total(west_dc))
 print("South DC total downtime:", calculate_total(south_dc))
