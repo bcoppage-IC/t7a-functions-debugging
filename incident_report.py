@@ -25,6 +25,10 @@ print("East DC total downtime:", calculate_total(east_dc))
 
 print("Most recent North DC incident:", north_dc[-1])
  
+# BUG: ValueError on the next line (line 32).
+# Hypothesis: I think this breaks because int() needs numbers, but letters were typed.
+# Evidence: int() could not convert the string 'ten' to a number.
+
 new_minutes = int(input("Log a new North DC incident (minutes): "))
 north_dc.append(new_minutes)
 print("New North DC total:", sum(north_dc))
