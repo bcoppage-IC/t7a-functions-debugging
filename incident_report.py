@@ -25,9 +25,9 @@ print("East DC total downtime:", calculate_total(east_dc))
 
 print("Most recent North DC incident:", north_dc[-1])
  
-# BUG: ValueError on the next line (line 32).
-# Hypothesis: I think this breaks because int() needs numbers, but letters were typed.
-# Evidence: int() could not convert the string 'ten' to a number.
+# BUG: NameError on the line north_dc.append(new_minutes).
+# Hypothesis: since int(raw) crashed, new_minutes was never defined, and line 37 still called it
+# Evidence: NameError - new_minutes was not assigned a value
 
 raw = input("Log a new North DC incident (minutes): ")
 try:
