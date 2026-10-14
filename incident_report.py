@@ -17,14 +17,11 @@ print("North DC total downtime:", calculate_total(north_dc))
 print("West DC total downtime:", calculate_total(west_dc))
 print("South DC total downtime:", calculate_total(south_dc))
 print("East DC total downtime:", calculate_total(east_dc)) 
-print(len(north_dc))
 
 # FIXED: IndexError on the next line.
 # Hypothesis: north_dc has 4 items, so the highest index is 3.
 # Evidence: print(len(north_dc)) showed 4. Index 4 does not exist.
 # Fix: use north_dc[-1] to get the last item. Index -1 counts from the end.
-
-print("Most recent North DC incident:", north_dc[-1])
 
 print("Most recent North DC incident:", north_dc[-1])
  
